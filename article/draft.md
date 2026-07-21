@@ -216,22 +216,32 @@ examples but unasked questions*. The same run also produced a clean negative: an
 attention-dilution "budget" mechanism I once believed in did nothing measurable at this
 scale, and is retired with data.
 
-**7c. Two pre-registered bets, running and waiting.**
-The most surprising A3 finding deserves its own sentence: low excitation predicts the
-transformer's *excess* error over the Bayes-optimal answer computed on the same prompt —
-degenerate prompt geometry isn't just hard, it's specifically **where the learned
-inference algorithm parts company with Bayes**. That observation is what the SAE pilot
-scales up: treat each sparse-autoencoder feature as a parameter and the data where it
-fires as that parameter's excitation; then features whose exciting data is degenerate
-should be exactly the ones that *wander across training seeds* — interpretability's
-known reliability problem, given a control-theoretic cause and a cheap label-free
-diagnostic. Pre-registered with a frequency-matched null (rare features are trivially
-unstable; that confound is controlled by design), running on an A100 as I write
-([design](../experiments/e1_sae/DESIGN.md)). Alongside it, a proposal I deliberately
-haven't built: prompt-*order* sensitivity as a failure of **uniform** observability —
-every window of the sequence must stay informative, not just the whole — with the test
-specified before any result exists ([proposal](../experiments/b4_ordering/PROPOSAL.md)).
-Pre-registration cuts both ways; that's the point.
+**7c. The experiment that said no — and said something better.**
+One more A3 finding first: low excitation predicts the transformer's *excess* error over
+the Bayes-optimal answer on the same prompt — degenerate prompt geometry isn't just hard,
+it's specifically **where the learned inference algorithm parts company with Bayes**.
+The SAE pilot took that logic up a level: treat each sparse-autoencoder feature as a
+parameter and the data where it fires as its excitation; predict that features with
+*degenerate* exciting data are the ones that wander across training seeds —
+interpretability's known reliability problem, given a control-theoretic cause. I
+pre-registered it with a frequency-matched control (rare features are trivially
+unstable) and trained five seed-varied SAEs on GPT-2 activations. **The prediction
+failed — with the sign flipped, robustly**: at matched frequency, it's the *diffusely*
+firing features that are unstable (partial $\rho = +0.26$, positive in ten of ten
+frequency deciles, split-half replicated;
+[full verdict](../experiments/e1_sae/E1_VERDICT.md)). The data was correcting my
+ontology: an SAE feature is not a regression parameter, whose estimate sharpens with
+richer excitation — it behaves like a *decomposition component*, whose identifiability
+comes from **separation**: tight, distinctive firing regions get rediscovered by every
+seed; diffuse regions get tiled differently every time. That is precisely the boundary
+between the two faces of excitation theory (Gram conditioning vs. Kruskal-style
+uniqueness of decompositions), located *empirically*. And the instrument survives with
+its sign corrected: a label-free score, computed from activation geometry alone, that
+flags which interpretability features not to trust. Alongside it sits a proposal I
+deliberately haven't built: prompt-*order* sensitivity as a failure of **uniform**
+observability, test specified before any result exists
+([proposal](../experiments/b4_ordering/PROPOSAL.md)). Pre-registration cuts both ways;
+this section is what that looks like when it cuts against me.
 
 ## 8. The frontier: excitation inside the model
 

@@ -1,0 +1,112 @@
+seed 0 ep 0 step 0/2441 loss 11056.590 L0 3073.3
+seed 0 ep 0 step 500/2441 loss 442.107 L0 102.0
+seed 0 ep 0 step 1000/2441 loss 417.595 L0 88.2
+seed 0 ep 0 step 1500/2441 loss 385.070 L0 85.4
+seed 0 ep 0 step 2000/2441 loss 354.515 L0 47.5
+seed 0 ep 1 step 0/2441 loss 346.772 L0 62.9
+seed 0 ep 1 step 500/2441 loss 332.202 L0 27.6
+seed 0 ep 1 step 1000/2441 loss 320.133 L0 18.4
+seed 0 ep 1 step 1500/2441 loss 306.215 L0 30.1
+seed 0 ep 1 step 2000/2441 loss 297.956 L0 29.1
+seed 0 ep 2 step 0/2441 loss 282.263 L0 26.4
+seed 0 ep 2 step 500/2441 loss 266.076 L0 26.6
+seed 0 ep 2 step 1000/2441 loss 270.850 L0 26.2
+seed 0 ep 2 step 1500/2441 loss 267.995 L0 26.8
+seed 0 ep 2 step 2000/2441 loss 280.521 L0 32.0
+FINAL seed 0 l1 3.0 steps 7323 L0 26.2
+seed 0 done; dead fraction 0.000
+seed 1 ep 0 step 0/2441 loss 11041.539 L0 3073.9
+seed 1 ep 0 step 500/2441 loss 442.050 L0 101.2
+seed 1 ep 0 step 1000/2441 loss 419.585 L0 90.5
+seed 1 ep 0 step 1500/2441 loss 384.079 L0 83.3
+seed 1 ep 0 step 2000/2441 loss 356.513 L0 49.1
+seed 1 ep 1 step 0/2441 loss 348.824 L0 66.2
+seed 1 ep 1 step 500/2441 loss 333.778 L0 28.4
+seed 1 ep 1 step 1000/2441 loss 323.360 L0 17.3
+seed 1 ep 1 step 1500/2441 loss 306.805 L0 29.1
+seed 1 ep 1 step 2000/2441 loss 298.491 L0 28.0
+seed 1 ep 2 step 0/2441 loss 281.912 L0 26.4
+seed 1 ep 2 step 500/2441 loss 265.313 L0 26.2
+seed 1 ep 2 step 1000/2441 loss 270.946 L0 25.7
+seed 1 ep 2 step 1500/2441 loss 268.037 L0 26.1
+seed 1 ep 2 step 2000/2441 loss 279.936 L0 31.3
+FINAL seed 1 l1 3.0 steps 7323 L0 25.2
+seed 1 done; dead fraction 0.000
+seed 2 ep 0 step 0/2441 loss 11028.063 L0 3071.4
+seed 2 ep 0 step 500/2441 loss 443.009 L0 103.3
+seed 2 ep 0 step 1000/2441 loss 414.909 L0 85.0
+seed 2 ep 0 step 1500/2441 loss 379.758 L0 84.2
+seed 2 ep 0 step 2000/2441 loss 355.558 L0 43.1
+seed 2 ep 1 step 0/2441 loss 348.640 L0 60.9
+seed 2 ep 1 step 500/2441 loss 334.175 L0 28.9
+seed 2 ep 1 step 1000/2441 loss 323.297 L0 17.8
+seed 2 ep 1 step 1500/2441 loss 308.604 L0 29.4
+seed 2 ep 1 step 2000/2441 loss 299.417 L0 28.2
+seed 2 ep 2 step 0/2441 loss 283.450 L0 25.9
+seed 2 ep 2 step 500/2441 loss 265.670 L0 25.7
+seed 2 ep 2 step 1000/2441 loss 270.145 L0 25.6
+seed 2 ep 2 step 1500/2441 loss 267.478 L0 25.5
+seed 2 ep 2 step 2000/2441 loss 280.720 L0 31.3
+FINAL seed 2 l1 3.0 steps 7323 L0 25.4
+seed 2 done; dead fraction 0.000
+seed 3 ep 0 step 0/2441 loss 11024.281 L0 3068.7
+seed 3 ep 0 step 500/2441 loss 443.552 L0 105.4
+seed 3 ep 0 step 1000/2441 loss 416.496 L0 85.1
+seed 3 ep 0 step 1500/2441 loss 378.510 L0 84.3
+seed 3 ep 0 step 2000/2441 loss 354.573 L0 43.1
+seed 3 ep 1 step 0/2441 loss 350.641 L0 60.7
+seed 3 ep 1 step 500/2441 loss 335.756 L0 29.1
+seed 3 ep 1 step 1000/2441 loss 324.597 L0 18.2
+seed 3 ep 1 step 1500/2441 loss 307.387 L0 29.1
+seed 3 ep 1 step 2000/2441 loss 297.496 L0 28.2
+seed 3 ep 2 step 0/2441 loss 282.588 L0 25.0
+seed 3 ep 2 step 500/2441 loss 264.766 L0 26.2
+seed 3 ep 2 step 1000/2441 loss 271.165 L0 25.8
+seed 3 ep 2 step 1500/2441 loss 267.657 L0 25.8
+seed 3 ep 2 step 2000/2441 loss 279.889 L0 30.1
+FINAL seed 3 l1 3.0 steps 7323 L0 24.6
+seed 3 done; dead fraction 0.000
+seed 4 ep 0 step 0/2441 loss 11000.602 L0 3070.2
+seed 4 ep 0 step 500/2441 loss 442.633 L0 98.6
+seed 4 ep 0 step 1000/2441 loss 420.882 L0 88.5
+seed 4 ep 0 step 1500/2441 loss 380.359 L0 90.0
+seed 4 ep 0 step 2000/2441 loss 353.710 L0 44.8
+seed 4 ep 1 step 0/2441 loss 347.291 L0 58.8
+seed 4 ep 1 step 500/2441 loss 332.686 L0 27.3
+seed 4 ep 1 step 1000/2441 loss 326.387 L0 17.9
+seed 4 ep 1 step 1500/2441 loss 307.635 L0 28.2
+seed 4 ep 1 step 2000/2441 loss 298.243 L0 28.1
+seed 4 ep 2 step 0/2441 loss 283.634 L0 25.5
+seed 4 ep 2 step 500/2441 loss 266.537 L0 25.1
+seed 4 ep 2 step 1000/2441 loss 271.704 L0 25.1
+seed 4 ep 2 step 1500/2441 loss 268.716 L0 25.8
+seed 4 ep 2 step 2000/2441 loss 280.749 L0 30.6
+FINAL seed 4 l1 3.0 steps 7323 L0 25.0
+seed 4 done; dead fraction 0.000
+# E1 pilot results
+
+seeds=5 width=6144 eval_tokens=1000000 usable_features=2693/6144 (min_n=500) dead_frac_seed0=0.000
+
+raw     Spearman(alpha, instability) = -0.068
+PARTIAL Spearman(alpha, instability | log freq, n) = +0.259  [+0.226, +0.293]  <-- P1/K1 pre-registered test
+
+## Frequency-decile bins (within-bin raw Spearman)
+  decile 0: n=  270  rho=+0.217
+  decile 1: n=  269  rho=+0.303
+  decile 2: n=  269  rho=+0.265
+  decile 3: n=  268  rho=+0.345
+  decile 4: n=  270  rho=+0.327
+  decile 5: n=  270  rho=+0.264
+  decile 6: n=  269  rho=+0.309
+  decile 7: n=  269  rho=+0.271
+  decile 8: n=  269  rho=+0.231
+  decile 9: n=  270  rho=+0.024
+
+## Matched-null (generic geometry) comparison
+  real features:  mean alpha 0.2411
+  null halfspaces: mean alpha 0.1950  (n=1000)
+  (null features have no instability — they calibrate how alpha varies with
+   region geometry/frequency alone; a real effect must survive the partial
+   correlation AND not be reproducible by frequency-matched geometry)
+
+## Pre-registered verdict: UNEXPECTED SIGN: partial correlation positive — investigate before claiming
