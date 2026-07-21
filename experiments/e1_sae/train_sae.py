@@ -19,6 +19,8 @@ p.add_argument("--l1", type=float, default=5e-4)
 p.add_argument("--lr", type=float, default=3e-4)
 p.add_argument("--batch", type=int, default=4096)
 p.add_argument("--epochs", type=int, default=3)
+p.add_argument("--max_steps", type=int, default=0, help="stop early (l1 calibration)")
+p.add_argument("--no_save", action="store_true")
 p.add_argument("--outdir", default=".")
 a = p.parse_args()
 WIDTH = a.width or (512 if a.smoke else 6144)
@@ -60,6 +62,15 @@ for ep in range(a.epochs):
             print(f"seed {a.seed} ep {ep} step {si}/{steps_per_epoch} "
                   f"loss {loss.item():.3f} L0 {l0:.1f}", flush=True)
         step_t += 1
+        if a.max_steps and step_t >= a.max_steps:
+            break
+    if a.max_steps and step_t >= a.max_steps:
+        break
+
+l0_final = float((f > 0).float().sum(-1).mean())
+print(f"FINAL seed {a.seed} l1 {a.l1} steps {step_t} L0 {l0_final:.1f}")
+if a.no_save:
+    raise SystemExit(0)
 
 dead = float((last_fire < step_t - 1000).float().mean())
 torch.save({"W_enc": W_enc.detach().cpu(), "b_enc": b_enc.detach().cpu(),
