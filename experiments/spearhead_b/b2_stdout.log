@@ -1,0 +1,32 @@
+##################################################################################
+SPEARHEAD B2 -- paired robust-vs-oracle (correlated test)
+D=6 r=3 N=100 rho=1.0  NDRAW=12  robust restarts=60
+##################################################################################
+
+--- per-draw table (test=correlated) ---
+draw  comp_rob  comp_orc   |dmag|  cos2(r,o)  cos2(o,tc)  cos2(r,tc)
+   0    0.0624    0.0470   0.0155      0.433       1.000       0.433
+   1    0.2437    0.0913   0.1524      0.267       1.000       0.267
+   2    0.0478    0.0571   0.0092      0.070       1.000       0.070
+   3    0.0560    0.0562   0.0002      0.141       1.000       0.141
+   4    0.1028    0.0898   0.0129      0.194       1.000       0.194
+   5    0.0420    0.1057   0.0638      0.005       1.000       0.005
+   6    0.2229    0.0750   0.1479      0.773       1.000       0.773
+   7    0.0224    0.0455   0.0231      0.839       1.000       0.839
+   8    0.0347    0.0791   0.0444      0.121       1.000       0.123
+   9    0.0383    0.1123   0.0740      0.781       0.998       0.813
+  10    0.0589    0.1372   0.0784      0.554       1.000       0.554
+  11    0.0777    0.0667   0.0110      0.044       1.000       0.044
+
+--- summary (mean +/- std) ---
+  comp robust                                       0.0841 +/- 0.0698
+  comp oracle                                       0.0802 +/- 0.0270
+  |comp_rob - comp_orc|  (paired magnitude gap)     0.0527 +/- 0.0505
+  relative paired magnitude gap                     0.5632 +/- 0.3633
+  cos2(dir_robust, dir_oracle)  (1=same dir)        0.3519 +/- 0.2987
+  cos2(dir_oracle, theta_c)     (1=targets truth)   0.9999 +/- 0.0004
+  cos2(dir_robust, theta_c)     (1=targets truth)   0.3546 +/- 0.3025
+
+--- verdict signal ---
+  magnitude: relative paired gap = 0.56 (SEPARATE in magnitude)
+  direction: cos2(dir_r,dir_o) = 0.35 (SEPARATE in direction);  oracle->tc=1.00, robust->tc=0.35

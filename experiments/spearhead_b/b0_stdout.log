@@ -1,0 +1,8 @@
+Monte-Carlo validation of closed-form risk (theta_r=0)
+mode            N design     analytic    MC mean    MC se  rel.err
+aligned       100 oracle       0.7807     0.7843   0.0002   0.0046
+aligned       100 robust       0.7807     0.7843   0.0002   0.0046
+aligned       100 I/D          0.9506     0.9889   0.0028   0.0387
+correlated    100 oracle       1.1915     1.2124   0.0007   0.0172
+correlated    100 robust       1.1675     1.1906   0.0004   0.0194
+correlated    100 I/D          1.3995     1.4521   0.0035   0.0362

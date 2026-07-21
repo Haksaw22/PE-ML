@@ -1,0 +1,66 @@
+##################################################################################
+SPEARHEAD B1 -- misspecification-complement excitation
+D=6  N=100  sigma^2=1.0  kappa=sigma^2/tau^2=1.0  rho=||theta_c||=1.0
+Design set: {M PSD, trace(M)=1}.  Allocation: rep=trace(M_rr), comp=trace(M_cc).
+comp/dim = comp/(D-r).  PR(comp) in [1,D-r] (1=rank-1 concentrated, D-r=isotropic).
+cos2(tc) = fraction of complement energy along the TRUE error direction theta_c.
+##################################################################################
+
+=== ALLOCATION  test=aligned  r=3/6  (mean +/- std over 6 draws) ===
+designer            comp  comp/dim  PR(comp)  cos2(tc)
+C:\Users\kulbi\Documents\Coding\PE ML\experiments\spearhead_b\exp_b1_misspec.py:342: RuntimeWarning: Mean of empty slice
+  return float(np.nanmean(a)), float(np.nanstd(a))
+C:\Users\kulbi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\numpy\lib\_nanfunctions_impl.py:2053: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+bayes      0.0000 +/-0.0000    0.0000       nan       nan
+minimax    0.5000 +/-0.0000    0.1667     3.000     0.333
+robust     0.0000 +/-0.0000    0.0000     0.710     0.260
+oracle     0.0000 +/-0.0000    0.0000     0.508     0.866
+cos2(robust top-dir, oracle top-dir) = 0.255 +/- 0.215   (0 => guard DIFFERENT directions)
+
+=== ALLOCATION  test=correlated  r=3/6  (mean +/- std over 6 draws) ===
+designer            comp  comp/dim  PR(comp)  cos2(tc)
+bayes      0.0000 +/-0.0000    0.0000       nan       nan
+minimax    0.5000 +/-0.0000    0.1667     3.000     0.333
+robust     0.1039 +/-0.0616    0.0346     1.000     0.332
+oracle     0.1028 +/-0.0618    0.0343     1.000     1.000
+cos2(robust top-dir, oracle top-dir) = 0.332 +/- 0.279   (0 => guard DIFFERENT directions)
+
+=== CAPACITY SCALING  test=aligned   comp fraction trace(M_cc) vs r ===
+  r    bayes  minimax   robust   oracle  orc-bay  rob-orc
+  1    0.000    0.833    1.000    1.000    1.000    0.000
+  2    0.000    0.667    0.000    0.000    0.000    0.000
+  3    0.000    0.500    0.000    0.000    0.000    0.000
+  4    0.000    0.333    0.000    0.002    0.002   -0.002
+  5    0.000    0.167    0.000    0.000    0.000    0.000
+  6    0.000    0.000    0.000    0.000    0.000    0.000
+
+=== CAPACITY SCALING  test=correlated   comp fraction trace(M_cc) vs r ===
+  r    bayes  minimax   robust   oracle  orc-bay  rob-orc
+  1    0.000    0.833    1.000    1.000    1.000    0.000
+  2    0.000    0.667    0.017    0.018    0.018   -0.002
+  3    0.000    0.500    0.118    0.051    0.051    0.067
+  4    0.000    0.333    0.033    0.080    0.080   -0.046
+  5    0.000    0.167    0.024    0.022    0.022    0.002
+  6    0.000    0.000    0.000    0.000    0.000    0.000
+
+=== SCALE SWEEP  test=correlated  r=3/6  (complement fraction) ===
+  rho      N    bayes  minimax   robust   oracle
+  0.5     30    0.000    0.500    0.676    0.359
+  0.5    100    0.000    0.500    0.027    0.065
+  0.5    500    0.000    0.500    0.014    0.021
+  1.0     30    0.000    0.500    0.678    0.366
+  1.0    100    0.000    0.500    0.033    0.053
+  1.0    500    0.000    0.500    0.014    0.022
+  2.0     30    0.000    0.500    0.679    0.044
+  2.0    100    0.000    0.500    0.032    0.058
+  2.0    500    0.000    0.500    0.014    0.022
+  4.0     30    0.000    0.500    0.679    0.045
+  4.0    100    0.000    0.500    0.089    0.099
+  4.0    500    0.000    0.500    0.014    0.022
+
+=== VALIDATION (optimiser vs known closed-form optima) ===
+Bayes comp frac       (expect 0.000):              0.0000
+Minimax comp frac     (expect (D-r)/D=0.500):        0.5000
+Minimax eigvals of M  (expect ~1/D=0.167 each):   [0.167, 0.167, 0.167, 0.167, 0.167, 0.167]
+Bayes M_rr diag       (expect ~1/r=0.333 each):   [0.333, 0.333, 0.333]
