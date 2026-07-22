@@ -92,7 +92,11 @@ with torch.no_grad():
 for name, v in res.items(): print(f"{name:13s}: MSE {np.mean(v):.3f}")
 gain_o = np.mean(res['base']) - np.mean(res['+informative'])
 gain_d = np.mean(res['base']) - np.mean(res['+duplicate'])
-print(f"informative gain / duplicate gain: {gain_o/max(gain_d,1e-9):.1f}x")"""),
+print(f"informative example: cuts MSE by {gain_o:.3f}")
+if gain_d <= 0:
+    print(f"duplicate example:  helps not at all (gain {gain_d:+.3f}) — similarity bought nothing")
+else:
+    print(f"duplicate example:  cuts MSE by {gain_d:.3f}  (informative/duplicate = {gain_o/gain_d:.1f}x)")"""),
 
 M("""## Where to go next
 
