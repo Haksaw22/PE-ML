@@ -267,6 +267,25 @@ Pre-registration cuts both ways. Section 7c is what it looks like when it cuts m
 
 ![Within-frequency, diffuse firing predicts instability](figures/f_e1_deciles.png)
 
+**7d. Postscript: the word "persistent," earning its keep.** After this essay was first
+published, two more pre-registered tests ran. One died on schedule: a windowed-
+observability account of prompt-order sensitivity was killed by its own criterion —
+the model is massively order-sensitive and no excitation functional predicts any of it
+([verdict](../experiments/b4_ordering/B4_VERDICT.md)); the corpse says order sensitivity
+is not excitation geometry, at least at this scale. The other is the cleanest positive
+in the repo. Stream demonstrations past a model with a fixed memory budget and ask what
+to evict. Curating memory to keep the retained set *exciting* halves error against
+recency at equal budget — classical concurrent learning, transplanted, working. But let
+the task drift, and the undiscounted version becomes **worse than naive recency**: it
+hoards memories that were maximally informative about a task that no longer exists.
+The time-discounted variant — the one that takes the *every-window* clause seriously —
+degrades gracefully and wins ([verdict](../experiments/a5_streaming/A5_VERDICT.md)).
+That is the difference between informativeness and persistent excitation, measured: an
+agent's memory should be curated for what keeps the *present* identifiable, and Section
+2's window condition turns out to be the design principle, not the fine print.
+
+![Hoarding stale excitation is worse than forgetting](figures/f_a5_policies.png)
+
 ## 8. The frontier: excitation inside the model
 
 Everything above treats the model as the subject of excitation. The questions I most
