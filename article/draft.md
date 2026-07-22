@@ -5,14 +5,13 @@ every number links to the repo. Remaining placeholder: the repo URL.*
 
 ---
 
-## 1. A confession from the pipe
+## 1. A confession from the track
 
 I met persistency of excitation before I knew its name, and it was wearing a Nyquist
 costume at the time. At Magway I worked on control for an electrodynamic carriage
-system — vehicles surfing magnetic fields down a pipe. In motion the carriages produced
+system — vehicles surfing magnetic fields down a track. In motion the carriages produced
 almost pure sinusoidal waveforms, and part of my job was making sure our sensing was
-granular enough to actually capture them. This is the engineer's first commandment:
-sample fast enough or be aliased, and aliasing does not negotiate.
+granular enough to actually capture them.
 
 I assumed for a while that this was the whole story of knowing a system: measure often
 enough and the truth arrives. Then I spent months designing experiments to make our
@@ -65,6 +64,9 @@ does not excuse the monotone diet you are feeding it now. The picture to keep: t
 unknown $\theta$ is an object in a dark room, each measurement a torch beam from one
 angle. From a single angle, many shapes cast identical shadows. Learning is not the
 accumulation of light. It is the accumulation of *angles*.
+
+![The ellipse is what you still don't know](figures/f_angles.gif)
+*Twelve measurements, two interrogation styles. Left: the same question repeated — the posterior stops shrinking along the unasked direction. Right: varied angles — the ellipse collapses. Sample count identical.*
 
 ## 3. The ladder of generality
 
@@ -126,6 +128,8 @@ connecting fields, but a literal shared object whose theorems transfer. That is 
 right kind of beauty. It is also a warning label, and Section 6 is about the day I read
 it properly: if your exciting new ML idea lives entirely inside this table, one of these
 six fields owns it already and has since before you were born.
+
+![One matrix, six vocabularies](figures/f_sixnames.png)
 
 ## 5. Compression's active twin
 
@@ -218,6 +222,8 @@ honest niche is the query-agnostic certificate. An earlier version of this exper
 reported 4.88×; my own audit found that number confounded with shot count, and the
 deconfounded 3× replaced it. The audit is in the repo. So is the 4.88×.
 
+![Excitation predicts ICL failure at fixed shot count](figures/f_quartiles.png)
+
 **7b. Informativeness is not similarity, by a factor of sixteen.**
 *Derive:* a near-duplicate demonstration adds zero new rank to $G$; a demonstration
 along an unprobed task direction adds an entire eigendirection. Retrieval-by-similarity
@@ -231,6 +237,8 @@ summary of the whole thesis: your prompt does not need more relevant examples; i
 unasked questions. The same run also returned a tidy negative — an attention-dilution
 "budget" mechanism I once considered my central idea did nothing measurable, and is
 retired with data rather than regret.
+
+![Informativeness beats similarity 16x](figures/f_aliasing.png)
 
 **7c. The experiment that said no, and said something better.**
 One more finding from 7a first: low excitation predicts the transformer's *excess* error
@@ -257,6 +265,8 @@ features not to trust. Alongside it sits a proposal I have deliberately not buil
 prompt-*order* sensitivity as a failure of uniform observability, test specified before
 any result exists ([proposal](../experiments/b4_ordering/PROPOSAL.md)).
 Pre-registration cuts both ways. Section 7c is what it looks like when it cuts me.
+
+![Within-frequency, diffuse firing predicts instability](figures/f_e1_deciles.png)
 
 ## 8. The frontier: excitation inside the model
 
