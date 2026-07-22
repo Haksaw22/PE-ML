@@ -34,8 +34,12 @@ def api(method, path, payload=None, headers_extra=None, raw=None):
     if headers_extra:
         headers.update(headers_extra)
     req = urllib.request.Request(url, data=data, headers=headers, method=method)
-    with urllib.request.urlopen(req) as r:
-        return json.loads(r.read())
+    try:
+        with urllib.request.urlopen(req) as r:
+            return json.loads(r.read())
+    except urllib.error.HTTPError as e:
+        print(f"API ERROR {e.code} on {method} {path}: {e.read().decode()[:600]}")
+        raise
 
 
 def upload_file(path):
@@ -77,7 +81,12 @@ def rich(text, bold=False, italic=False):
                 out.append({"type": "text", "text": {"content": label, "link": {"url": url}},
                             "annotations": _ann(bold, italic, False)})
             elif REPO_BASE and not url.startswith("http"):
-                full = REPO_BASE.rstrip("/") + "/" + url.lstrip("./").replace("../", "")
+                # links are relative to article/: "../x" -> repo root x; "y" -> article/y
+                if url.startswith("../"):
+                    rel = url[3:]
+                else:
+                    rel = "article/" + url.lstrip("./")
+                full = REPO_BASE.rstrip("/") + "/" + rel.rstrip("/")
                 out.append({"type": "text", "text": {"content": label, "link": {"url": full}},
                             "annotations": _ann(bold, italic, False)})
             else:
@@ -178,7 +187,7 @@ def main():
     kids = api("GET", f"blocks/{PARENT}/children?page_size=100")
     for k in kids.get("results", []):
         if k.get("type") == "child_page" and k["child_page"]["title"] == TITLE:
-            api("PATCH", f"blocks/{k['id']}", {"archived": True})
+            api("PATCH", f"pages/{k['id']}", {"archived": True})
             print("archived previous version")
 
     blocks = blocks_from_markdown(md)

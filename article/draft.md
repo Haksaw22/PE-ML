@@ -1,7 +1,6 @@
 # Persistency of Excitation: The Geometry of Asking Good Questions
 
-*Draft v2 — tone B (dry). Math is KaTeX-ready for Notion;
-every number links to the repo. Remaining placeholder: the repo URL.*
+*Draft v2 — published. Source of truth for the Notion page; republish via publish_notion.py.*
 
 ---
 
@@ -311,7 +310,7 @@ One matrix, and one discipline. The matrix counts the questions your data has as
 The discipline is declining to believe your own enthusiasm until the object has survived
 an honest attempt on its life — the graveyard sections above did more for the surviving
 claims than any success did. Code, pre-registrations, audits, corpses and results are
-all in [the repository](https://github.com/【repo-url】), arranged so that you can check
+all in [the repository](https://github.com/Haksaw22/PE-ML), arranged so that you can check
 me. I would summarize the whole essay as follows: ask questions whose answers you cannot
 predict, keep asking them from new directions, and when reality answers with a sign flip,
 consider the possibility that it is telling you what your object actually was.
