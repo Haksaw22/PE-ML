@@ -1,8 +1,9 @@
 # B4 — Demo ordering by windowed uniform observability (pre-registered proposal)
 
-**Status:** theory-gated 2026-07-19 (instrument bar: REVISE with repairs — this document
-closes them on paper); **not yet built** — published here as a pre-registered design so the
-claim is falsifiable before any result exists. See `process/gate-verdicts-2026-07-19.md`.
+**Status: EXECUTED 2026-07-22 — KILLED at Tier A** (pre-registered criterion (b): sign
+prediction at chance despite strong order sensitivity; sensitivity appendix equally null).
+See `B4_VERDICT.md`, `B4_TIER_A.md`, `B4_APPENDIX.md`. Original pre-registration below,
+unedited.
 
 ## The idea in one paragraph
 

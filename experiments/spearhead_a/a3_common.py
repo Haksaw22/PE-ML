@@ -68,28 +68,36 @@ class Block(nn.Module):
         self.ff = nn.Sequential(nn.Linear(d_model, 4 * d_model), nn.GELU(),
                                 nn.Linear(4 * d_model, d_model))
 
-    def forward(self, h):
-        a, w = self.attn(h, h, h, need_weights=True, average_attn_weights=True)
+    def forward(self, h, mask=None):
+        a, w = self.attn(h, h, h, need_weights=True, average_attn_weights=True,
+                         attn_mask=mask)
         h = self.ln1(h + a)
         h = self.ln2(h + self.ff(h))
         return h, w  # w: (B, L, L) attention weights averaged over heads
 
 
 class ICLModel(nn.Module):
-    """Two-block bidirectional encoder; exposes per-layer attention maps."""
+    """Two-block encoder; exposes per-layer attention maps. causal=True masks
+    future positions (order sensitivity becomes structural, as in real LLMs)."""
 
-    def __init__(self, d_in=D + 2, d_model=64, nhead=4, nlayers=2, maxlen=KMAX + 2):
+    def __init__(self, d_in=D + 2, d_model=64, nhead=4, nlayers=2, maxlen=KMAX + 2,
+                 causal=False):
         super().__init__()
         self.embed = nn.Linear(d_in, d_model)
         self.pos = nn.Parameter(torch.zeros(maxlen, d_model))
         self.blocks = nn.ModuleList(Block(d_model, nhead) for _ in range(nlayers))
         self.head = nn.Linear(d_model, 1)
+        self.causal = causal
 
     def forward(self, toks, return_attn=False):
         h = self.embed(toks) + self.pos[: toks.shape[1]]
+        mask = None
+        if self.causal:
+            L = toks.shape[1]
+            mask = torch.triu(torch.ones(L, L, dtype=torch.bool, device=toks.device), 1)
         maps = []
         for blk in self.blocks:
-            h, w = blk(h)
+            h, w = blk(h, mask)
             maps.append(w)
         out = self.head(h[:, -1]).squeeze(-1)
         return (out, maps) if return_attn else out
