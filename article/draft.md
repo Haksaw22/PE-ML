@@ -26,13 +26,12 @@ lesson. You can sample a system at absurd rates and still learn nothing, because
 system only answers what you ask, and we had been asking one question with great
 frequency and enthusiasm. Somewhere in the adaptive-control literature this failure has
 been a theorem for sixty years, with the least glamorous name in applied mathematics:
-**persistency of excitation**. Nyquist is about sampling often enough. Its
-less-famous cousin is about asking *differently* enough — coverage of state directions
-rather than coverage of time. Same geometry, different space; we'll make that precise
-later.
+**persistency of excitation**. Nyquist is about sampling often enough; its less-famous
+cousin is about asking *differently* enough — coverage of state directions rather than
+coverage of time. Same geometry, different space; we'll make that precise later.
 
-The everyday version is familiar to anyone who has tried to get to know a person.
-You do not learn much by asking whether they like food. You learn by asking the question
+The everyday version is familiar to anyone who has tried to get to know a person — you
+don't learn much by asking whether they like food. You learn by asking the question
 whose answer you can't predict — what they'd defend in an argument, what they'd do with
 an unscheduled Tuesday. You are looking, quite literally, for what excites them, and
 each answer tells you which deeper question is now worth asking. Everyone runs this
@@ -40,8 +39,8 @@ algorithm socially. Control theory wrote it down, proved when it converges, and 
 mostly kept it to itself.
 
 This essay takes that theorem for a walk through machine learning — prompts, features,
-exploration — and reports honestly on the walk, including the three occasions on which
-the theorem bit me. The bites are the useful part.
+exploration — and reports honestly on the walk, including the three times it bit me —
+the bites are probably the useful part.
 
 ## 2. The whole idea, from one equation
 
@@ -54,8 +53,8 @@ where $\phi$ is whatever you measured alongside the outcome. One observation is 
 equation in two unknowns: a line of candidate explanations, not an answer. A second
 observation pins it down — unless your second $\phi$ points the same direction as the
 first, in which case you have asked the same question twice and received the same
-information once. Ten thousand further observations along that direction will not help.
-This is worth sitting with: the sample count is not the currency. The *directions* are.
+information once. Ten thousand further observations along that direction will not help — which is worth
+sitting with, because the sample count isn't really the currency here. The *directions* are.
 
 The bookkeeping object is the **information matrix** $\sum_k \phi_k \phi_k^\top$ — a
 running record of which directions have been probed and how hard. Its smallest
@@ -69,14 +68,14 @@ because any learner that adapts also forgets, and the rich data you supplied las
 does not excuse the monotone diet you are feeding it now. The picture to keep: the
 unknown $\theta$ is an object in a dark room, each measurement a torch beam from one
 angle. From a single angle, many shapes cast identical shadows. Learning is not the
-accumulation of light. It is the accumulation of *angles*.
+accumulation of light — it is the accumulation of *angles*.
 
 ![The ellipse is what you still don't know](figures/f_angles.gif)
 *Twelve measurements, two interrogation styles. Left: the same question repeated — the posterior stops shrinking along the unasked direction. Right: varied angles — the ellipse collapses. Sample count identical.*
 
 ## 3. The ladder of generality
 
-The equation above looks aggressively linear. The idea is not; it climbs.
+The equation above looks aggressively linear, but the idea is not — it climbs.
 
 **Rung one: linear.** The regressor $\phi$ is the information carrier, and everything
 reduces to the rank story above.
@@ -129,9 +128,8 @@ $M = \sum_k \phi_k \phi_k^\top$ and tour the neighboring fields:
   mentioning control theory, which is fine, control theory is used to it.
 
 Six fields, one positive-semidefinite matrix, six vocabularies for "which questions has
-the data asked." I want to be careful about what kind of claim this is: not a metaphor
-connecting fields, but a literal shared object whose theorems transfer. That is the
-right kind of beauty. It is also a warning label, and Section 6 is about the day I read
+the data asked." And I do mean this literally — not a metaphor connecting fields, but a
+shared object whose theorems transfer. That is the right kind of beauty. It is also a warning label, and Section 6 is about the day I read
 it properly: if your exciting new ML idea lives entirely inside this table, one of these
 six fields owns it already and has since before you were born.
 
@@ -142,8 +140,8 @@ six fields owns it already and has since before you were born.
 There is a seventh face, and it is the one that connects my two research obsessions.
 The minimum-description-length principle says: prefer the hypothesis that compresses
 your observations best. It is a complete philosophy of what to believe and a total
-non-answer on what to *look at* — MDL ranks explanations and sits there. Compression
-is passive.
+non-answer on what to *look at* — MDL ranks explanations and then just sits there.
+Compression is passive.
 
 Excitation is the missing half. In Bayesian terms, the expected information gain of an
 experiment equals the expected reduction in posterior code length, so choosing the most
@@ -168,7 +166,7 @@ explain.
 Everything so far is the enthusiast's tour, and enthusiasm is cheap. Over recent months
 I ran these ideas through a deliberately adversarial process — pre-registered kill
 criteria, prosecution-and-defense theory gates, and a scheduled audit of my own past
-conclusions ([paper trail](../process/)). Three lessons survived. Each one killed
+conclusions ([paper trail](../process/)). Three lessons survived, and each one killed
 something I was fond of.
 
 **Scar one: the circularity trap.** My first "excitation theory of in-context learning"
@@ -222,8 +220,8 @@ worst excitation quartile carry roughly **3× the error** of the best quartile a
 shot count; the projected score wins every slice (the unprojected one is provably
 degenerate when shots < dimension); and the probe-estimated subspace matches the oracle
 to three decimal places ([results](../experiments/spearhead_a/A3_VERDICT.md)).
-Disclosures: per-query, classical Bayes predictive variance — which needs the query and
-the prior — beats the excitation score, exactly as pre-registered; the instrument's
+Two disclosures: per-query, classical Bayes predictive variance — which needs the query
+and the prior — beats the excitation score, exactly as pre-registered; the instrument's
 honest niche is the query-agnostic certificate. An earlier version of this experiment
 reported 4.88×; my own audit found that number confounded with shot count, and the
 deconfounded 3× replaced it. The audit is in the repo. So is the 4.88×.
@@ -239,7 +237,7 @@ maximally similar demo should do approximately nothing — at identical shot cou
 *Look:* error 1.36 → 0.36 for the informative demo; 1.36 → 1.30 for the duplicate. A
 **16× difference in improvement**, called in advance by $\Delta\lambda_{\min}$
 ([results](../experiments/spearhead_a/A3_ALIASING.md)). This is the cleanest three-bar
-summary of the whole thesis: your prompt does not need more relevant examples; it needs
+summary of the whole thesis: your prompt doesn't need more relevant examples — it needs
 unasked questions. The same run also returned a tidy negative — an attention-dilution
 "budget" mechanism I once considered my central idea did nothing measurable, and is
 retired with data rather than regret.
@@ -270,7 +268,7 @@ score, computed from activation geometry alone, that flags which interpretabilit
 features not to trust. Alongside it sits a proposal I have deliberately not built:
 prompt-*order* sensitivity as a failure of uniform observability, test specified before
 any result exists ([proposal](../experiments/b4_ordering/PROPOSAL.md)).
-Pre-registration cuts both ways. Section 7c is what it looks like when it cuts me.
+Pre-registration cuts both ways — Section 7c is what it looks like when it cuts me.
 
 ![Within-frequency, diffuse firing predicts instability](figures/f_e1_deciles.png)
 
@@ -295,7 +293,7 @@ agent's memory should be curated for what keeps the *present* identifiable, and 
 
 ## 8. The frontier: excitation inside the model
 
-Everything above treats the model as the subject of excitation. The questions I most
+Everything above treats the model as the subject of excitation; the questions I most
 want to work on next turn the lens around.
 
 **Capacity as an excitation budget.** Recent interpretability work at Anthropic finds
@@ -308,7 +306,7 @@ requiring more concurrently-identified modes than the budget should fail in a
 characteristic, predictable way — an excitation-order ceiling for reasoning. I state
 this as a question rather than a result, partly out of principle and partly because my
 own toy-scale probe of a budget effect came back negative, which is the sort of detail
-one is tempted to omit and therefore must not. The twin question: are the workspace's
+you're tempted to omit and therefore mustn't. The twin question: are the workspace's
 concepts *identifiable* — is each one pinned down by the contexts that excite it? That
 is the SAE-stability question of Section 7c, asked one floor up.
 
@@ -319,24 +317,24 @@ language model, the discriminating experiment need not be external data: chain-o
 on a counterintuitive claim is *self-excitation* of the discriminating direction. The
 design principle this suggests might be called calibrated decisiveness: commit when the
 discriminating direction can be excited — by evidence, retrieval, or derivation — and
-stay honestly uncertain when it cannot. Note the corollary about what should *never*
+stay honestly uncertain when it cannot. There is a corollary about what should *never*
 excite a stance direction: social pressure. Sycophancy, restated as an
 excitation-hygiene violation, becomes a measurable property rather than a vibe.
 
 **Oversight as dual control.** Dual control — act so as to perform *and* to remain
 identifiable — is adaptive control's oldest dilemma. An aligned model under oversight
 faces its mirror image: behave so that your overseer's data about you remains
-persistently exciting, so that what you are stays identifiable from what you do. I do
-not know how far this framing carries. It is the question on this list I would most
+persistently exciting, so that what you are stays identifiable from what you do. I
+don't know how far this framing carries — it is the question on this list I would most
 like the excuse to pursue properly.
 
 ## 9. Coda
 
-One matrix, and one discipline. The matrix counts the questions your data has asked.
-The discipline is declining to believe your own enthusiasm until the object has survived
+One matrix, and one discipline. The matrix counts the questions your data has asked;
+the discipline is declining to believe your own enthusiasm until the object has survived
 an honest attempt on its life — the graveyard sections above did more for the surviving
 claims than any success did. Code, pre-registrations, audits, corpses and results are
 all in [the repository](https://github.com/Haksaw22/PE-ML), arranged so that you can check
-me. I would summarize the whole essay as follows: ask questions whose answers you cannot
+me. If I had to boil the whole essay down: ask questions whose answers you can't
 predict, keep asking them from new directions, and when reality answers with a sign flip,
 consider the possibility that it is telling you what your object actually was.
