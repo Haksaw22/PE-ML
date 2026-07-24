@@ -1,6 +1,13 @@
 # Persistency of Excitation: The Geometry of Asking Good Questions
 
-*Draft v2 — published. Source of truth for the Notion page; republish via publish_notion.py.*
+*Sixty years ago control theory proved a theorem about why learning stops: your data
+ran out of new questions. This essay ports that theorem — persistency of excitation —
+into machine learning: what it predicts about prompts, features, and memory; the three
+times it bit me; and the experiments (some confirmed, one killed on schedule) that came
+out the other side.*
+
+**Code & experiments:** [github.com/Haksaw22/PE-ML](https://github.com/Haksaw22/PE-ML) —
+every number below links to a verdict document in the repo.
 
 ---
 
