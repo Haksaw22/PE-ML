@@ -52,9 +52,10 @@ process/             status board, audits, gate verdicts — the epistemic paper
 experiments/
   spearhead_a/       ICL excitation diagnostic (A1→A3; A3 is current)
   spearhead_b/       misspecification probe (negative result, documented)
-  e1_sae/            SAE feature identifiability pilot (pre-registered, running)
-  b4_ordering/       prompt-order proposal (pre-registered, unbuilt)
-article/             essay draft: "the geometry of asking good questions"
+  e1_sae/            SAE feature identifiability pilot (sign-flip finding)
+  b4_ordering/       prompt-order test (pre-registered kill)
+  a5_streaming/      excitation-preserving memory (the "persistent" demo)
+article/             the essay: "the geometry of asking good questions"
 ```
 
 ## Reproduce

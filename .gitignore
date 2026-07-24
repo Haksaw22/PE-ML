@@ -4,3 +4,8 @@ __pycache__/
 .ipynb_checkpoints/
 experiments/e1_sae/acts_*.npy
 experiments/e1_sae/sae_seed*.pt
+DIGEST.md
+application/
+conversations/
+article/tone-samples.md
+article/OUTLINE.md
