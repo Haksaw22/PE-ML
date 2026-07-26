@@ -1,6 +1,6 @@
 # E1 pilot — Per-feature excitation predicts SAE feature instability (pre-registered design)
 
-**Status:** DESIGN GATE — awaiting review before any compute. (Per program process:
+**Status:** EXECUTED — see `E1_VERDICT.md`. (Per program process:
 theory gate passed 2026-07-19 with instrument-bar REVISE; this document closes the
 required repairs before execution. See `process/gate-verdicts-2026-07-19.md`.)
 

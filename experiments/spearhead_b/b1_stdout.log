@@ -8,9 +8,9 @@ cos2(tc) = fraction of complement energy along the TRUE error direction theta_c.
 
 === ALLOCATION  test=aligned  r=3/6  (mean +/- std over 6 draws) ===
 designer            comp  comp/dim  PR(comp)  cos2(tc)
-C:\Users\kulbi\Documents\Coding\PE ML\experiments\spearhead_b\exp_b1_misspec.py:342: RuntimeWarning: Mean of empty slice
+<repo>\experiments\spearhead_b\exp_b1_misspec.py:342: RuntimeWarning: Mean of empty slice
   return float(np.nanmean(a)), float(np.nanstd(a))
-C:\Users\kulbi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\numpy\lib\_nanfunctions_impl.py:2053: RuntimeWarning: Degrees of freedom <= 0 for slice.
+<site-packages>\numpy\lib\_nanfunctions_impl.py:2053: RuntimeWarning: Degrees of freedom <= 0 for slice.
   var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
 bayes      0.0000 +/-0.0000    0.0000       nan       nan
 minimax    0.5000 +/-0.0000    0.1667     3.000     0.333

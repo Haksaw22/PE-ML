@@ -1,6 +1,6 @@
 # A5 pilot — excitation-preserving memory for streaming ICL (design-lite, pre-registered)
 
-**Status:** DESIGN — awaiting review before running. (A5 was reopened by the
+**Status:** EXECUTED — see `A5_VERDICT.md`. (A5 was reopened by the
 2026-07-19 pivot audit: the streaming/online demo-arrival axis is the genuinely
 sequential PoE reading the static-face kill never touched.)
 

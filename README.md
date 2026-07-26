@@ -70,4 +70,5 @@ python experiments/spearhead_a/exp_a3_aliasing.py
 # SAE pilot (GPU): see experiments/e1_sae/DESIGN.md
 ```
 
-*Kulbir Singh, 2026. All verdicts trace to pre-registered criteria and saved arrays.*
+*Kulbir Singh, 2026. All verdicts trace to pre-registered criteria and saved arrays.
+Released under the MIT License — see [`LICENSE`](LICENSE).*
