@@ -42,22 +42,3 @@ across the claimed capacity. Prediction: accuracy cliff co-located with occupanc
 saturation. Honest caveats stapled on: our toy-scale attention-budget probe was
 negative (A3 aliasing suite), and small open models may have a different (or no crisp)
 workspace — a negative here is informative about small models, not about Claude.
-
-## Relationship to the application
-
-This note is the "research areas I'm excited about" answer made concrete: it reads
-their newest work, brings a genuinely different toolbox to it, carries our own
-empirical prior (E1), and proposes pilots runnable without internal access. Q1 is the
-one I'd stake the paragraph on: it has a method, a prior, a null model, and a use.
-
-## Decision points
-
-- **D1:** Q1 first (my recommendation — measurable, mirrors infrastructure we've
-  built, produces a reliability instrument) or Q2 first (bigger swing, weaker footing)?
-- **D2:** is the minimal J-lens reimplementation worth doing as its own small public
-  artifact regardless (I think yes — it demonstrates engagement with their method and
-  is reusable for both questions)?
-- **D3:** timing — post-deadline build, or does a Q1 pilot started now (A100 is idle)
-  strengthen the application enough to justify the split focus? My honest call:
-  post-deadline; the application already has enough built evidence, and a rushed
-  J-lens reimplementation is the kind of thing that embarrasses.
