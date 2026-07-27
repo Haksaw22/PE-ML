@@ -178,7 +178,7 @@ about the world. So an excitation claim only counts for anything once the predic
 quantity is measured *independently* of the score. Every experiment in the next
 section is built around that rule - and not for theoretical reasons.
 
-**The classical wall.** Take excitation to few-shot example selection: "choose
+**The classical trap.** Take excitation to few-shot example selection: "choose
 demonstrations that excite the task subspace". Sounds novel. It's E-optimal experiment
 design, from 1959. The audit's verdict on my static few-shot theory was blunt - static
 excitation questions collapse into optimal design, where sixty years of literature
@@ -307,7 +307,7 @@ excitation language, a bound on simultaneous excitation rank - tasks requiring m
 concurrently-identified modes than the budget should fail in a characteristic,
 predictable way. An excitation-order ceiling for reasoning, if it holds up. I'm
 stating it as a question rather than a result, partly on principle and partly because
-my own toy-scale probe of a budget effect came back negative - which is exactly the
+my own small-scale probe of a budget effect came back negative - which is exactly the
 sort of detail you're tempted to leave out, so it stays in. The twin question: are the
 workspace's concepts *identifiable* - is each one pinned down by the contexts that
 excite it? That's the same identifiability worry as the SAE-stability result, just
@@ -334,7 +334,7 @@ like an excuse to pursue properly.
 
 ---
 
-Everything here - code, pre-registrations, audits, the dead ideas alongside the live
+Everything here - code, pre-registrations, audits, the failed ideas alongside the live
 ones - is in [the repository](https://github.com/Haksaw22/PE-ML), arranged so you can
 check me. The theorem itself is sixty years old and still mostly sits in the
 control-theory literature, which I think is a shame - so if any of the open questions
