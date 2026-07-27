@@ -1,8 +1,9 @@
 # Workspace excitation: two PE questions asked of Anthropic's J-space
 
 **Status:** discussion note (2026-07-22).
-Builds explicitly on the published global-workspace work (J-lens; ~10–25 concept
-capacity); our wedge is the excitation/identifiability treatment of *their* object.
+Builds explicitly on the published global-workspace work (J-lens; capacity bounded at
+no more than ~25 concepts); our wedge is the excitation/identifiability treatment of
+*their* object.
 
 ## Why we have standing here
 
@@ -32,8 +33,8 @@ frequency-matched nulls included.
 
 ## Q2 — Is capacity an excitation budget? (flashier, riskier)
 
-The workspace holds ~10–25 concurrent concepts. PE reading: a bound on **simultaneous
-excitation rank** — tasks requiring more concurrently-identified latent factors than
+The workspace holds no more than ~25 concurrent concepts. PE reading: a bound on
+**simultaneous excitation rank** — tasks requiring more concurrently-identified latent factors than
 the budget should fail *predictably*, with a measurable occupancy cliff, not merely
 gradually. Build path: parametric m-factor composition tasks (answer depends on m
 simultaneously-tracked quantities); measure J-space occupancy (number of
