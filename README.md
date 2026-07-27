@@ -2,7 +2,7 @@
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Haksaw22/PE-ML/blob/main/playground.ipynb)
 **Start here:** [`playground.ipynb`](playground.ipynb) (5-minute CPU demo, pre-executed) ·
-[the essay](https://app.notion.com/p/Persistency-of-Excitation-The-Geometry-of-Asking-Good-Questions-3a535890b98b813cacafc731e9732bc4)
+[the essay](https://long-soul-5cf.notion.site/Persistency-of-Excitation-The-Geometry-of-Asking-Good-Questions-3a735890b98b81acb9a0fc4d536e46ae)
 
 **A research program porting the identifiability mathematics of adaptive control —
 persistency of excitation (PE) — into modern ML: when is a learner's data rich enough to
